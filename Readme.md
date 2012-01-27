@@ -38,7 +38,11 @@ v0.1:
 - Closure without result and parameters:
 	- Usage:
 	
-			<Identifier> = () => { /* to do something */ } or <Identifier> = => {  }
+			<Identifier> = () => { /* to do something */ }
+		
+		or 
+			
+			<Identifier> = => {  }
 	
 	- Result in Java:
 	
