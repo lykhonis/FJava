@@ -19,6 +19,7 @@ v0.1:
 			lazy <Type> <Identifier> = { return <Identifier>; }
 	
 	- Result in Java:
+	
 		final Lazy<Type> <Identifier> = new Lazy<Type>(new F1<Type>() {
 			@Override
 			public <Type> invoke() {
@@ -26,7 +27,9 @@ v0.1:
 				return <Identifier>;
 			}
 		});
+		
 	- Example:
+	
 		lazy String s = "Lazy string";
 		System.out.println(s.invoke());
 		
