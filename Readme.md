@@ -20,21 +20,21 @@ v0.1:
 	
 	- Result in Java:
 	
-		final Lazy<Type> <Identifier> = new Lazy<Type>(new F1<Type>() {
-			@Override
-			public <Type> invoke() {
-				/* to do something */
-				return <Identifier>;
-			}
-		});
+			final Lazy<Type> <Identifier> = new Lazy<Type>(new F1<Type>() {
+				@Override
+				public <Type> invoke() {
+					/* to do something */
+					return <Identifier>;
+				}
+			});
 		
 	- Example:
 	
-		lazy String s = "Lazy string";
-		System.out.println(s.invoke());
+			lazy String s = "Lazy string";
+			System.out.println(s.invoke());
 		
-		lazy String s1 = { System.out.println("Requesting lazy string..."); return "Lazy string 2"; }
-		System.out.println(s1.invoke());
+			lazy String s1 = { System.out.println("Requesting lazy string..."); return "Lazy string 2"; }
+			System.out.println(s1.invoke());
 
 - Closure without result and parameters:
 	Usage:
