@@ -51,28 +51,44 @@ v0.1:
 		};
 	
 	Example:
+		
 		f = () => { System.out.println("Closure without parameters"); }
 		f.invoke();
 		
 		f1 = => { System.out.println("Closure without parameters and less to write"); }
 		f1.invoke();
+		
 	As parameter:
-		void someFunction(() => f) { /* to do something */ f.invoke(); } or 
+		
+		void someFunction(() => f) { /* to do something */ f.invoke(); }
+		
+	or
+	 
 		void someFunction( => f) { /* to do something */ f.invoke(); }
 
-		!Warning: in Java code () => f and => f are same language constructions, 
-		!you cannot implement two function above at the same time.
-
-		someFunction(() => { /* to do something */ }); or
+		/*
+		!WARNING: in Java code () => f and => f are same language constructions, 
+		you cannot implement two function above at the same time.
+		*/
+		
+		someFunction(() => { /* to do something */ });
+		
+	or
+	
 		someFunction( => { /* to do something */ });
+		
 	As anonymous:
+		
 		() => { /* to do something */ }.invoke(); or
 		=> { /* to do something */ }.invoke();
 		
 - Closure without parameters but with result:
 	Usage:
+		
 		<Identifier> = (<Type>) => { return <Identifier>; }
+	
 	Result in Java:
+		
 		final F1<Type> <Identifier> = new F1<Type>() {
 			@Override
 			public <Type> invoke() {
@@ -80,20 +96,29 @@ v0.1:
 				return <Identifier>;
 			}
 		};
+		
 	Example:
+		
 		f = (String) => { return "Some closure with result of String"; }
 		System.out.println(f.invoke());
+	
 	As parameter:
+		
 		void someFunction((String) => f) { /* to do something */ String s = f.invoke(); }
 	
 		someFunction((String) => { /* to do something */ return "Some string here"; });
+	
 	As anonymous:
+		
 		(String) => { /* to do something */ return "Some string here"; }.invoke();
 		
 - Closure with arguments and result (now supports only 1 parameter):
 	Usage:
+		
 		<Identifier> = (<Type>, <Type> <Identifier> [, <Type> <Identifier>]) => { return <Identifier>; }
+	
 	Result in Java:
+		
 		final F2<Type, Type> <Identifier> = new F2<Type, Type>() {
 			@Override
 			public <Type> invoke(final <Type> <Identifier>) {
@@ -101,12 +126,19 @@ v0.1:
 				return <Identifier>;
 			}
 		};
+	
 	Example:
+		
 		f = (String, String name) => { return "Hello " + name; }
 		System.out.println(f.invoke("Vladimir"));
+	
 	As parameter:
+		
 		void someFunction((String, String) => f) { /* to do something */ String s = f.invoke("something"); }
 		
 		someFunction((String, String something) => { /* to do something */ return "We found " + something; });
+	
 	As anonymous:
+		
 		(String, String something) => { /* to do something */ return "We found " + something; }.invoke();
+		
