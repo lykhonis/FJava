@@ -25,7 +25,7 @@ v0.1:
 		lazy String s1 = { System.out.println("Requesting lazy string..."); return "Lazy string 2"; }
 		System.out.println(s1.invoke());
 
-- Closure without result and parameters declaration:
+- Closure without result and parameters:
 	Usage:
 		<Identifier> = () => { /* to do something */ } or <Identifier> = => {  }
 	Result in Java:
@@ -54,7 +54,7 @@ v0.1:
 		() => { /* to do something */ }.invoke(); or
 		=> { /* to do something */ }.invoke();
 		
-- Closure without parameters but with result as variable:
+- Closure without parameters but with result:
 	Usage:
 		<Identifier> = (<Type>) => { return <Identifier>; }
 	Result in Java:
@@ -75,7 +75,7 @@ v0.1:
 	As anonymous:
 		(String) => { /* to do something */ return "Some string here"; }.invoke();
 		
-- Closure with arguments and result as variable (now supports only 1 parameter):
+- Closure with arguments and result (now supports only 1 parameter):
 	Usage:
 		<Identifier> = (<Type>, <Type> <Identifier> [, <Type> <Identifier>]) => { return <Identifier>; }
 	Result in Java:
