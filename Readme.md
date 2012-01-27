@@ -1,9 +1,11 @@
+##DESCRIPTION:
 F(unctional)Java translator by Vladimir Lichonos.
 
 - Simple tool should run before Java compiler to translate some structures of the language to 'clean' Java code.
 - All arguments passes to this tool has to be *.fjava files, that can even have no FJava structures. Tool will create .java file with same name in same package (folder) so newly created java file can be compiled by Java compiler.
 - Be able to use this tool it's required to add com.fjava.library to classpath to your project. There are no files to be attached to your code, except if you use, for example, () => {} structure, tool will replace it with some interface F<...>(...) so this file will be compiled by Java compiler and attached to your project. If you don't use any structured, additional files won't be attached at all.
   
+##USAGE:
 v0.1:
 
 - Lazy initialization of variables:
