@@ -10,11 +10,10 @@ v0.1:
 
 - Lazy initialization of variables:
 	- Usage:
-		One line initialization:
 		
 			lazy <Type> <Identifier> = <Identifier>;
 		
-		Block initialization:
+		or
 		
 			lazy <Type> <Identifier> = { return <Identifier>; }
 	
