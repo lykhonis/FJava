@@ -69,10 +69,7 @@ v0.1:
 	 
 			void someFunction( => f) { /* to do something */ f.invoke(); }
 
-			/*
-			!WARNING: in Java code () => f and => f are same language constructions, 
-			you cannot implement two function above at the same time.
-			*/
+		!WARNING: in Java code () => f and => f are same language constructions, you cannot implement two function above at the same time.
 		
 			someFunction(() => { /* to do something */ });
 		
