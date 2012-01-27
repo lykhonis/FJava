@@ -37,108 +37,108 @@ v0.1:
 			System.out.println(s1.invoke());
 
 - Closure without result and parameters:
-	Usage:
+	- Usage:
 	
-		<Identifier> = () => { /* to do something */ } or <Identifier> = => {  }
+			<Identifier> = () => { /* to do something */ } or <Identifier> = => {  }
 	
-	Result in Java:
+	- Result in Java:
 	
-		final F <Identifier> = new F() {
-			@Override
-			public void invoke() {
-				/* to do something */
-			}
-		};
+			final F <Identifier> = new F() {
+				@Override
+				public void invoke() {
+					/* to do something */
+				}
+			};
 	
-	Example:
+	- Example:
 		
-		f = () => { System.out.println("Closure without parameters"); }
-		f.invoke();
+			f = () => { System.out.println("Closure without parameters"); }
+			f.invoke();
 		
-		f1 = => { System.out.println("Closure without parameters and less to write"); }
-		f1.invoke();
+			f1 = => { System.out.println("Closure without parameters and less to write"); }
+			f1.invoke();
 		
-	As parameter:
+	- As parameter:
 		
-		void someFunction(() => f) { /* to do something */ f.invoke(); }
+			void someFunction(() => f) { /* to do something */ f.invoke(); }
 		
-	or
+		or
 	 
-		void someFunction( => f) { /* to do something */ f.invoke(); }
+			void someFunction( => f) { /* to do something */ f.invoke(); }
 
-		/*
-		!WARNING: in Java code () => f and => f are same language constructions, 
-		you cannot implement two function above at the same time.
-		*/
+			/*
+			!WARNING: in Java code () => f and => f are same language constructions, 
+			you cannot implement two function above at the same time.
+			*/
 		
-		someFunction(() => { /* to do something */ });
+			someFunction(() => { /* to do something */ });
 		
-	or
-	
-		someFunction( => { /* to do something */ });
+		or
 		
-	As anonymous:
+			someFunction( => { /* to do something */ });
 		
-		() => { /* to do something */ }.invoke(); or
-		=> { /* to do something */ }.invoke();
+	- As anonymous:
+		
+			() => { /* to do something */ }.invoke(); or
+			=> { /* to do something */ }.invoke();
 		
 - Closure without parameters but with result:
-	Usage:
+	- Usage:
 		
-		<Identifier> = (<Type>) => { return <Identifier>; }
+			<Identifier> = (<Type>) => { return <Identifier>; }
 	
-	Result in Java:
+	- Result in Java:
 		
-		final F1<Type> <Identifier> = new F1<Type>() {
-			@Override
-			public <Type> invoke() {
-				/* to do something */
-				return <Identifier>;
-			}
-		};
+			final F1<Type> <Identifier> = new F1<Type>() {
+				@Override
+				public <Type> invoke() {
+					/* to do something */
+					return <Identifier>;
+				}
+			};
 		
-	Example:
+	- Example:
 		
-		f = (String) => { return "Some closure with result of String"; }
-		System.out.println(f.invoke());
+			f = (String) => { return "Some closure with result of String"; }
+			System.out.println(f.invoke());
 	
-	As parameter:
+	- As parameter:
 		
-		void someFunction((String) => f) { /* to do something */ String s = f.invoke(); }
+			void someFunction((String) => f) { /* to do something */ String s = f.invoke(); }
 	
-		someFunction((String) => { /* to do something */ return "Some string here"; });
+			someFunction((String) => { /* to do something */ return "Some string here"; });
 	
-	As anonymous:
+	- As anonymous:
 		
-		(String) => { /* to do something */ return "Some string here"; }.invoke();
+			(String) => { /* to do something */ return "Some string here"; }.invoke();
 		
 - Closure with arguments and result (now supports only 1 parameter):
-	Usage:
+	- Usage:
 		
-		<Identifier> = (<Type>, <Type> <Identifier> [, <Type> <Identifier>]) => { return <Identifier>; }
+			<Identifier> = (<Type>, <Type> <Identifier> [, <Type> <Identifier>]) => { return <Identifier>; }
 	
-	Result in Java:
+	- Result in Java:
 		
-		final F2<Type, Type> <Identifier> = new F2<Type, Type>() {
-			@Override
-			public <Type> invoke(final <Type> <Identifier>) {
-				/* to do something */
-				return <Identifier>;
-			}
-		};
+			final F2<Type, Type> <Identifier> = new F2<Type, Type>() {
+				@Override
+				public <Type> invoke(final <Type> <Identifier>) {
+					/* to do something */
+					return <Identifier>;
+				}
+			};
 	
-	Example:
+	- Example:
 		
-		f = (String, String name) => { return "Hello " + name; }
-		System.out.println(f.invoke("Vladimir"));
+			f = (String, String name) => { return "Hello " + name; }
+			System.out.println(f.invoke("Vladimir"));
 	
-	As parameter:
+	- As parameter:
 		
-		void someFunction((String, String) => f) { /* to do something */ String s = f.invoke("something"); }
+			void someFunction((String, String) => f) { /* to do something */ String s = f.invoke("something"); }
 		
-		someFunction((String, String something) => { /* to do something */ return "We found " + something; });
+			someFunction((String, String something) => { /* to do something */ return "We found " + something; });
 	
-	As anonymous:
+	- As anonymous:
 		
-		(String, String something) => { /* to do something */ return "We found " + something; }.invoke();
+			(String, String something) => { /* to do something */ return "We found " + something; }.invoke();
 		
