@@ -7,7 +7,7 @@ import java.util.List;
 
 class TranslatorFactory {
 
-	private static final List<Class<? extends Translateable>> PLUGINS = new ArrayList<Class<? extends Translateable>>();
+	private static final List<Class<? extends Translatable>> PLUGINS = new ArrayList<Class<? extends Translatable>>();
 	static {
 		PLUGINS.add(Closure.class);
 		PLUGINS.add(Closure1.class);
@@ -22,14 +22,14 @@ class TranslatorFactory {
 		PLUGINS.add(Lazy.class);
 	}
 
-	private final List<Translateable> translateables;
+	private final List<Translatable> translateables;
 	final Tokenizer tokenizer;
 
 	public TranslatorFactory(Tokenizer tokenizer) {
 		this.tokenizer = tokenizer;
-		final List<Translateable> plugins = new ArrayList<Translateable>();
+		final List<Translatable> plugins = new ArrayList<Translatable>();
 
-		for (Class<? extends Translateable> plugin : PLUGINS) {
+		for (Class<? extends Translatable> plugin : PLUGINS) {
 			try {
 				plugins.add(plugin.getConstructor(TranslatorFactory.class).newInstance(this));
 			} catch (IllegalArgumentException e) {
@@ -55,7 +55,7 @@ class TranslatorFactory {
 		if (token.type == TokenType.SINGLE_LINE_COMMENT || token.type == TokenType.MULTI_LINE_COMMENT)
 			return "";
 
-		for (Translateable translateable : translateables)
+		for (Translatable translateable : translateables)
 			if (translateable.test())
 				return translateable.translate();
 

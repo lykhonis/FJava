@@ -3,7 +3,7 @@ package com.fjava.translator;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class Atom implements Translateable {
+abstract class Atom implements Translatable {
 
 	private final TranslatorFactory factory;
 	private List<String> tokens = new ArrayList<String>();

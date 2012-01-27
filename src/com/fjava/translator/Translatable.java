@@ -1,6 +1,6 @@
 package com.fjava.translator;
 
-public interface Translateable {
+public interface Translatable {
 
 	String translate();
 	
