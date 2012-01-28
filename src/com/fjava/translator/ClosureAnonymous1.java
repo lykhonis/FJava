@@ -16,7 +16,7 @@ public class ClosureAnonymous1 extends Atom {
 
 	@Override
 	public String translate() {
-		StringBuilder result = new StringBuilder(format("new F1<$2>() { @Override public $2 invoke() { "));
+		final StringBuilder result = new StringBuilder(format("new F1<$2>() { @Override public $2 invoke() { "));
 		skipRequired();
 
 		TokenType type = require();

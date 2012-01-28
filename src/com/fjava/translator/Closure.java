@@ -16,7 +16,8 @@ public class Closure extends Atom {
 
 	@Override
 	public String translate() {
-		StringBuilder result = new StringBuilder(format("final F $1 = new F() { @Override public void invoke() { "));
+		final StringBuilder result = new StringBuilder(
+				format("final F $1 = new F() { @Override public void invoke() { "));
 		skipRequired();
 
 		TokenType type = require();

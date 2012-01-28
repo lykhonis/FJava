@@ -15,7 +15,7 @@ public class Lazy extends Atom {
 
 	@Override
 	public String translate() {
-		StringBuilder result = new StringBuilder(
+		final StringBuilder result = new StringBuilder(
 				format("final Lazy<$2> $3 = new Lazy<$2>(new F1<$2>() { @Override public $2 invoke() "));
 		skipRequired();
 

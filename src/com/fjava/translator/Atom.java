@@ -6,7 +6,7 @@ import java.util.List;
 abstract class Atom implements Translatable {
 
 	private final TranslatorFactory factory;
-	private List<String> tokens = new ArrayList<String>();
+	private final List<String> tokens = new ArrayList<String>();
 
 	public Atom(TranslatorFactory factory) {
 		this.factory = factory;
@@ -42,6 +42,13 @@ abstract class Atom implements Translatable {
 
 	protected void skipRequired() {
 		factory.tokenizer.skip(tokens.size() - 1);
+	}
+
+	protected void require(TokenType type) {
+		final TokenType foundType = require();
+
+		if (!foundType.equals(type))
+			throw new FJavaTranslatingException("Expecting " + type + " but found " + foundType + ".");
 	}
 
 	protected TokenType require() {

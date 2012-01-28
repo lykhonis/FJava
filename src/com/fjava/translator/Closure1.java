@@ -16,7 +16,7 @@ public class Closure1 extends Atom {
 
 	@Override
 	public String translate() {
-		StringBuilder result = new StringBuilder(
+		final StringBuilder result = new StringBuilder(
 				format("final F1<$4> $1 = new F1<$4>() { @Override public $4 invoke() { "));
 		skipRequired();
 

@@ -20,6 +20,7 @@ class TranslatorFactory {
 		PLUGINS.add(ClosureType1.class);
 		PLUGINS.add(ClosureType2.class);
 		PLUGINS.add(Lazy.class);
+		PLUGINS.add(Clazz.class);
 	}
 
 	private final List<Translatable> translateables;

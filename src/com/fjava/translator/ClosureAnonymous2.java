@@ -17,9 +17,10 @@ public class ClosureAnonymous2 extends Atom {
 
 	@Override
 	public String translate() {
-		StringBuilder result = new StringBuilder(format("new F2<$2, $4>() { @Override public $2 invoke(final $4 $5) { "));
+		final StringBuilder result = new StringBuilder(
+				format("new F2<$2, $4>() { @Override public $2 invoke(final $4 $5) { "));
 		skipRequired();
-		
+
 		TokenType type = require();
 		while (type != RBRACE) {
 			result.append(get());

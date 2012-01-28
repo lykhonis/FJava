@@ -8,6 +8,31 @@ F(unctional)Java translator by Vladimir Lichonos.
 ##USAGE:
 v0.1:
 
+- Simple class declaration (holders of some values):
+	- Usage:
+	
+			[...] class <Identifier>([[<public> | <protected> | <private>] <Type> <Identifier> [, ...]]*)
+			
+	- Result in Java:
+	
+			[...] class <Identifier>() {
+			
+				([<public> | <protected> | <private>] | <public>) final <Type> <Identifier>;
+				[...]*
+				
+				public <Identifier>([<Type> <Identifier> [, ...]]*) {
+					this.[Identifier] = [Identifier];
+					[...]*
+				}
+			}
+			
+	- Example:
+	
+			class Test(String name, String hello)
+			
+			final Test test = new Test("Vladimir", "Hello, ");
+			System.out.println(test.hello + test.name);
+
 - Lazy initialization of variables:
 	- Usage:
 		
