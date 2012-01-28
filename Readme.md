@@ -15,7 +15,7 @@ v0.1:
 			
 	- Result in Java:
 	
-			[...] class <Identifier>() {
+			[...] class <Identifier> {
 			
 				([<public> | <protected> | <private>] | <public>) final <Type> <Identifier>;
 				[...]*
