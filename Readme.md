@@ -114,6 +114,10 @@ v0.1:
 	- Usage:
 		
 			<Identifier> = (<Type>) => { return <Identifier>; }
+			
+		or
+		
+			<Identifier> = (<Type>) => <Identifier>;
 	
 	- Result in Java:
 		
@@ -129,6 +133,9 @@ v0.1:
 		
 			f = (String) => { return "Some closure with result of String"; }
 			System.out.println(f.invoke());
+			
+			f = (String) => "Some single line closure";
+			System.out.println(f.invoke());
 	
 	- As parameter:
 		
@@ -139,6 +146,14 @@ v0.1:
 	- As anonymous:
 		
 			(String) => { /* to do something */ return "Some string here"; }.invoke();
+			
+		or
+		
+			((String) => "Some simple result").invoke();
+			
+		or, if you like
+		
+			(String) => "Some strange result";.invoke();
 		
 - Closure with arguments and result (now supports only 1 parameter):
 	- Usage:
@@ -159,6 +174,9 @@ v0.1:
 		
 			f = (String, String name) => { return "Hello " + name; }
 			System.out.println(f.invoke("Vladimir"));
+			
+			f = (String, String name) => "Hello " + name;
+			System.out.println(f.invoke("Vladimir"));
 	
 	- As parameter:
 		
@@ -168,5 +186,13 @@ v0.1:
 	
 	- As anonymous:
 		
-			(String, String something) => { /* to do something */ return "We found " + something; }.invoke();
+			(String, String something) => { /* to do something */ return "We found " + something; }.invoke("Apple");
+			
+		or
+		
+			((String, String something) => "We found simple " + something).invoke("Apple");
+			
+		or, if you like
+		
+			(String, String something) => "We found strange " + something;.invoke("Apple");
 		

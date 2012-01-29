@@ -119,12 +119,22 @@ enum TokenType {
 					+ "\ufb28\ufb2a-\ufb36\ufb38-\ufb3c\ufb3e\ufb40-\ufb41\ufb43-\ufb44\ufb46-\ufbb1\ufbd3-\ufd3d\ufd50-\ufd8f\ufd92-\ufdc7\ufdf0-"
 					+ "\ufdfb\ufe20-\ufe23\ufe33-\ufe34\ufe4d-\ufe4f\ufe69\ufe70-\ufe72\ufe74\ufe76-\ufefc\ufeff\uff04\uff10-\uff19\uff21-\uff3a\uff3f\uff41-"
 					+ "\uff5a\uff65-\uffbe\uffc2-\uffc7\uffca-\uffcf\uffd2-\uffd7\uffda-\uffdc\uffe0-\uffe1\uffe5-\uffe6\ufff9-\ufffb]*)\\b",
-			" "), INTEGER_LITERAL("^([a-fA-F0-9lLxX]+)"), FLOAT_LITERAL("^([a-fA-F0-9\\.\\+\\-pPxX]+)"),
-	CHARACTER_LITERAL("^(\\'([^\\'\\\\n\r]|(\\\\[ntbrf\\\\\\'\\\"0-7]+))\\')"), STRING_LITERAL(
-			"^(\\\"([^\\'\\\\\n\\r]|(\\\\[ntbrf\\\\\\'\\\"0-7]+))*\\\")"), LPAREN("^(\\()"), RPAREN("^(\\))"), LBRACE(
-			"^(\\{)"), RBRACE("^(\\})"), LBREACKET("^(\\[)"), RBRACKET("^(\\])"), SEMICOLON("^(\\;)"), COMMA("^(\\,)"),
-	AT("^(\\@)"), ASSIGN("^(\\=)"), LT("^(\\<)"), RT("^(\\>)"), BANG("^(\\!)"), TILDE("^(\\~)"), HOOK("^(\\?)"), COLON(
-			"^(\\:)"), EQ("^(\\=\\=)"), LE("^(\\<\\=)"), GE("^(\\>\\=)"), NE("^(\\!\\=)"), SC_OR("^(\\|\\|)"), SC_AND(
+			" "),
+	LPAREN("^(\\()"),
+	RPAREN("^(\\))"),
+	LBRACE("^(\\{)"),
+	RBRACE("^(\\})"),
+	LBREACKET("^(\\[)"),
+	RBRACKET("^(\\])"),
+	FLOAT_LITERAL(
+			"^(([0-9]+\\.[0-9]*[eE]?[\\-\\+]?[0-9]*[fFdD]?)|(\\.[0-9]+[eE]?[\\-\\+]?[0-9]*[fFdD])|"
+					+ "([0-9]+[eE][\\-\\+]?[0-9]+[fFdD]?)|([0-9]+[eE]?[\\-\\+]?[0-9]*[fFdD])|(0[xX]\\.?[pP][\\-\\+]?[0-9]+[fFdD]?)|"
+					+ "(0[xX][a-fA-F0-9]*\\.[a-fA-F0-9]+[pP][\\-\\+]?[0-9]+[fFdD]?))"), INTEGER_LITERAL(
+			"^((0[xX][a-fA-F0-9]+[lL]?)|([0-9]+[lL]?))"), CHARACTER_LITERAL(
+			"^(\\'([^\\'\\\\n\r]|(\\\\[ntbrf\\\\\\'\\\"0-7]+))\\')"), STRING_LITERAL(
+			"^(\\\"([^\\\"\\'\\\\\n\\r]|(\\\\[ntbrf\\\\\\'\\\"0-7]))*\\\")"), SEMICOLON("^(\\;)"), COMMA("^(\\,)"), AT(
+			"^(\\@)"), ASSIGN("^(\\=)"), LT("^(\\<)"), RT("^(\\>)"), BANG("^(\\!)"), TILDE("^(\\~)"), HOOK("^(\\?)"),
+	COLON("^(\\:)"), EQ("^(\\=\\=)"), LE("^(\\<\\=)"), GE("^(\\>\\=)"), NE("^(\\!\\=)"), SC_OR("^(\\|\\|)"), SC_AND(
 			"^(\\&\\&)"), INCR("^(\\+\\+)"), DECR("^(\\-\\-)"), PLUS("^(\\+)"), MINUS("^(\\-)"), STAR("^(\\*)"), SLASH(
 			"^(\\/)"), BIT_AND("^(\\&)"), BIT_OR("^(\\|)"), XOR("^(\\^)"), REM("^(\\%)"), LSHIFT("^(\\<\\<)"),
 	PLUSASSIGN("^(\\+\\=)"), MINUSASSIGN("^(\\-\\=)"), STARASSIGN("^(\\*\\=)"), SLASHASSIGN("^(\\/\\=)"), ANDASSIGN(
