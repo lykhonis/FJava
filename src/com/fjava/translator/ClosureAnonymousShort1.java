@@ -6,6 +6,7 @@ import static com.fjava.translator.TokenType.LPAREN;
 import static com.fjava.translator.TokenType.RPAREN;
 import static com.fjava.translator.TokenType.RT;
 import static com.fjava.translator.TokenType.SEMICOLON;
+import static com.fjava.translator.TokenType.COMMA;
 
 public class ClosureAnonymousShort1 extends Atom {
 
@@ -20,7 +21,7 @@ public class ClosureAnonymousShort1 extends Atom {
 
 		int parenCounter = 0;
 		TokenType type = require();
-		while (type != SEMICOLON) {
+		while (type != SEMICOLON && type != COMMA) {
 			if (type == LPAREN)
 				parenCounter++;
 			else if (type == RPAREN && --parenCounter < 0)
@@ -33,6 +34,8 @@ public class ClosureAnonymousShort1 extends Atom {
 
 		if (type == RPAREN)
 			result.append(')');
+		else if (type == COMMA)
+			result.append(',');
 
 		return result.toString();
 	}
