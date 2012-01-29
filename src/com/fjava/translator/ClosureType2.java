@@ -21,6 +21,6 @@ public class ClosureType2 extends Atom {
 
 	@Override
 	public boolean test() {
-		return test(LPAREN, IDENTIFIER, COMMA, IDENTIFIER, RPAREN, ASSIGN, RT, IDENTIFIER);
+		return test(LPAREN, IDENTIFIER, COMMA, IDENTIFIER, ASSIGN, RT, RPAREN, IDENTIFIER);
 	}
 }

@@ -5,21 +5,22 @@ import static com.fjava.translator.TokenType.IDENTIFIER;
 import static com.fjava.translator.TokenType.LPAREN;
 import static com.fjava.translator.TokenType.RPAREN;
 import static com.fjava.translator.TokenType.RT;
+import static com.fjava.translator.TokenType.SEMICOLON;
 
-public class ClosureType extends Atom {
+public class ClosureNotInitialized extends Atom {
 
-	public ClosureType(TranslatorFactory factory) {
+	public ClosureNotInitialized(TranslatorFactory factory) {
 		super(factory);
 	}
 
 	@Override
 	public String translate() {
 		skipRequired();
-		return format("final F $5");
+		return format("F $5;");
 	}
 
 	@Override
 	public boolean test() {
-		return test(LPAREN, ASSIGN, RT, RPAREN, IDENTIFIER);
+		return test(LPAREN, RPAREN, ASSIGN, RT, IDENTIFIER, SEMICOLON);
 	}
 }

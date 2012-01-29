@@ -14,15 +14,17 @@ class TranslatorFactory {
 		PLUGINS.add(Closure2.class);
 		PLUGINS.add(ClosureShort1.class);
 		PLUGINS.add(ClosureShort2.class);
+		PLUGINS.add(ClosureNotInitialized.class);
+		PLUGINS.add(ClosureNotInitialized1.class);
+		PLUGINS.add(ClosureNotInitialized2.class);
+		PLUGINS.add(ClosureType.class);
+		PLUGINS.add(ClosureType1.class);
+		PLUGINS.add(ClosureType2.class);
 		PLUGINS.add(ClosureAnonymous.class);
 		PLUGINS.add(ClosureAnonymous1.class);
 		PLUGINS.add(ClosureAnonymous2.class);
 		PLUGINS.add(ClosureAnonymousShort1.class);
 		PLUGINS.add(ClosureAnonymousShort2.class);
-		PLUGINS.add(ClosureType.class);
-		PLUGINS.add(ClosureTypeWithoutParentheses.class);
-		PLUGINS.add(ClosureType1.class);
-		PLUGINS.add(ClosureType2.class);
 		PLUGINS.add(Lazy.class);
 		PLUGINS.add(Clazz.class);
 	}

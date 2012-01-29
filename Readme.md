@@ -88,11 +88,7 @@ v0.1:
 		
 	- As parameter:
 		
-			void someFunction(() => f) { /* to do something */ f.invoke(); }
-		
-		or
-	 
-			void someFunction( => f) { /* to do something */ f.invoke(); }
+			void someFunction(( =>) f) { /* to do something */ f.invoke(); }
 
 		!WARNING: in Java code () => f and => f are same language constructions, you cannot define two functions above at the same time.
 		
@@ -139,7 +135,7 @@ v0.1:
 	
 	- As parameter:
 		
-			void someFunction((String) => f) { /* to do something */ String s = f.invoke(); }
+			void someFunction((String =>) f) { /* to do something */ String s = f.invoke(); }
 	
 			someFunction((String) => { /* to do something */ return "Some string here"; });
 	
@@ -180,7 +176,7 @@ v0.1:
 	
 	- As parameter:
 		
-			void someFunction((String, String) => f) { /* to do something */ String s = f.invoke("something"); }
+			void someFunction((String, String =>) f) { /* to do something */ String s = f.invoke("something"); }
 		
 			someFunction((String, String something) => { /* to do something */ return "We found " + something; });
 	
